@@ -14,6 +14,7 @@
 # limitations under the License.
 #
 # Author: Moritz "Moss" Wundke (b.thax.dcg@gmail.com)
+# Author: Amit Surana [amit@smargav.com]
 #
 # <License>
 #
@@ -525,12 +526,12 @@ echo "Building boost for android for $ARCH"
          $cxxflags                    \
          link=static                  \
          threading=multi              \
-         --layout=versioned           \
+         --layout=system              \
          $WITHOUT_LIBRARIES           \
          -sICONV_PATH=`pwd`/../libiconv-libicu-android/$ARCH \
          -sICU_PATH=`pwd`/../libiconv-libicu-android/$ARCH \
          --build-dir="./../$BUILD_DIR/build/$ARCH" \
-         --prefix="./../$BUILD_DIR/out/$ARCH" \
+         --prefix="./../$BUILD_DIR/$ARCH" \
          $LIBRARIES                   \
          $LIBRARIES_BROKEN            \
          install 2>&1                 \
