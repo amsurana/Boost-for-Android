@@ -171,7 +171,7 @@ fi
 
 if [ -d "$PROGDIR/$BUILD_DIR" ]; then
 	echo "Cleaning: $BUILD_DIR"
-	rm -f -r $PROGDIR/$BUILD_DIR
+	#rm -f -r $PROGDIR/$BUILD_DIR
 fi
 
 
@@ -526,7 +526,7 @@ echo "Building boost for android for $ARCH"
          $cxxflags                    \
          link=static                  \
          threading=multi              \
-         --layout=system              \
+         --layout=versioned           \
          $WITHOUT_LIBRARIES           \
          -sICONV_PATH=`pwd`/../libiconv-libicu-android/$ARCH \
          -sICU_PATH=`pwd`/../libiconv-libicu-android/$ARCH \
