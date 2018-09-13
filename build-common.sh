@@ -309,7 +309,7 @@ download_file ()
     # Is this HTTP, HTTPS or FTP ?
     if pattern_match "^(http|https|ftp):.*" "$1"; then
         if [ -n "$CMD_WGET" ] ; then
-            run $CMD_WGET -O $2 $1 
+            run $CMD_WGET -q -O $2 $1 
         elif [ -n "$CMD_CURL" ] ; then
             run $CMD_CURL -o -L $2 $1
         else
