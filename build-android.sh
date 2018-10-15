@@ -536,7 +536,7 @@ echo "Building boost for android for $ARCH"
          $LIBRARIES_BROKEN            \
          install 2>&1                 \
          || { dump "ERROR: Failed to build boost for android for $ARCH!" ; rm -rf ./../$BUILD_DIR/out/$ARCH ; exit 1 ; }
-  } | tee -a $PROGDIR/build.log | grep -v -P "(common.copy|clang-linux.compile|clang-linux.archive)"
+  } | tee -a $PROGDIR/build.log | grep -v -P "(common.copy|clang-linux.compile|clang-linux.archive|common.mkdir)"
 
   # PIPESTATUS variable is defined only in Bash, and we are using /bin/sh, which is not Bash on newer Debian/Ubuntu
 )
